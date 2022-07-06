@@ -1,18 +1,20 @@
 .grid {
-    padding: 10px;
+    flex: 1 1;
+
 }
 
 .row {
     display: flex;
-}
-
-.container {
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-    width: 320px;
+    flex: 1 1;
 }
 
 .shaded {
     background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 40vw;
 }
