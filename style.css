@@ -1,0 +1,17 @@
+.grid {
+    /* border-color: black;
+    border-width: 1px;
+    border-style: solid; */
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.container {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    width: 320px;
+}
