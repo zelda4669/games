@@ -1,7 +1,4 @@
 .grid {
-    /* border-color: black;
-    border-width: 1px;
-    border-style: solid; */
     padding: 10px;
 }
 
@@ -14,4 +11,8 @@
     border-width: 1px;
     border-style: solid;
     width: 320px;
+}
+
+.shaded {
+    background-color: black;
 }
