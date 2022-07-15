@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.scoring {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: auto;
+    gap: 30px;
+    /* justify-content: center; */
+    align-content: center;
+    color: black
+}
+
+.scoreboard {
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(194, 194, 194);
+    box-shadow: 10px 5px 5px gray;
+}
+
+button {
+    border-style: none;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 8px;
+}

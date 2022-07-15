@@ -1,20 +1,7 @@
-.grid {
-    flex: 1 1;
-
+#deluxebuttons {
+    display: none;
 }
 
-.row {
-    display: flex;
-    flex: 1 1;
-}
-
-.shaded {
-    background-color: black;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    height: 40vw;
+.gametype[value='deluxe']~#deluxebuttons {
+    display: block;
 }

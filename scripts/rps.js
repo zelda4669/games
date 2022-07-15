@@ -1,63 +1,36 @@
-function computerPlay() {
-    return Math.floor((Math.random()) * 2)
+const ruleset = {
+    'rock': {'rock': 'tie', 'paper': 'lose', 'scissors': 'win', 'lizard': 'win', 'spock': 'lose'},
+    'paper': {'rock': 'win', 'paper': 'tie',  'scissors': 'lose', 'lizard': 'lose', 'spock': 'win'},
+    'scissors': {'rock': 'lose', 'paper': 'win', 'scissors': 'tie',  'lizard': 'win', 'spock': 'lose'},
+    'lizard': {'rock': 'lose', 'paper': 'win', 'scissors': 'lose', 'lizard': 'tie', 'spock': 'win'},
+    'spock': {'rock': 'win', 'paper': 'lose', 'scissors': 'win', 'lizard': 'lose', 'spock': 'tie'}
 }
 
-function userPlay(turn) {
-    
-    switch(turn) {
-        case "rock":
-            return 0;
-            break;
-        case "paper":
-            return 1;
-            break;
-        case "scissors":
-            return 2;
-            break;
-        default:
-            return "That's not a vaild play! Refresh the page to try again."
-    }
-}
+let num = 2
 
 let round = 0
 let computerScore = 0
 let userScore = 0
 
 function playRound(computerPlay, userPlay) {
+    const compPlayName = {0: 'rock', 1: 'paper', 2: 'scissors', 3: 'lizard', 4: 'spock'}
     const numrounds = document.querySelector('#numrounds')
     const results = document.querySelector('#results')
     const compscore = document.querySelector('#compscore')
     const uscore = document.querySelector('#userscore')
+    computerPlay = compPlayName[computerPlay]
 
     round++
     numrounds.textContent = `${round}`
 
-    if (computerPlay === userPlay) {
-        results.textContent = "It's a tie!"
-    } else if (computerPlay === 0) {
-        if (userPlay === 1) {
-            results.textContent = "You win! Paper beats rock."
-            userScore++
-        } else {
-            results.textContent = "You lose! Scissors beats paper."
-            computerScore++
-        }
-    } else if (computerPlay === 1) {
-        if (userPlay === 0) {
-            results.textContent = "You lose! Paper beats rock."
-            computerScore++
-        } else {
-            results.textContent = "You win! Rock beats scissors."
-            userScore++
-        }
-    } else if (computerPlay === 2) {
-        if (userPlay === 0) {
-            results.textContent = "You win! Rock beats scissors."
-            userScore++
-        } else {
-            results.textContent = "You lose! Scissors beats paper."
-            computerScore++
-        }
+    if(ruleset[userPlay][computerPlay] === 'win') {
+        results.textContent = `You played ${userPlay} and I played ${computerPlay}. You won this round, but I'll get you next time!`
+        userScore++
+    } else if (ruleset[userPlay][computerPlay] === 'lose') {
+        results.textContent = `You played ${userPlay} and I played ${computerPlay}. You have been defeated by my superior intellect!`
+        computerScore++
+    } else {
+        results.textContent = `You played ${userPlay} and I played.... ${computerPlay}?!?!?! A tie! What witchcraft is this?`
     }
 
     compscore.textContent = `${computerScore}`
@@ -69,8 +42,8 @@ const buttons = document.querySelectorAll('button')
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
-        let playerOne = computerPlay()
-        let playerTwo = userPlay(button.id)
+        let playerOne = Math.floor((Math.random()) * num)
+        let playerTwo = button.id
         playRound(playerOne, playerTwo)
     })
 })
