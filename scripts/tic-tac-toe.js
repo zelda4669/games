@@ -1,19 +1,28 @@
-(function gameboard() {
-    const game = document.getElementById('tic-tac-toe')
+const gameboard = (function() {
+    const board = document.getElementById('ttt')
     
-    for(let i=0; i<3; i++) {
-        let row = document.createElement('div')
-        row.classList.add('row')
-        row.setAttribute('id', i)
-        game.appendChild(row)
-
-        for(let x=0; x<3; x++) {
-            let tile = document.createElement('div')
-            tile.classList.add('tile')
-            tile.setAttribute('id', x)
-            tile.textContent = `X`
-            row.appendChild(tile)
-        }
-
+    for(let i=0; i<9; i++) {
+        const cell = document.createElement('div')
+        cell.classList.add('tile')
+        cell.setAttribute('id', `cell${i}`)
+        cell.textContent = `${i}`
+        board.appendChild(cell)
     }
+
+    const tiles = document.querySelectorAll('.cell')
+    tiles.forEach((tile) => {
+        tile.addEventListener('click', () => {
+            // tile.textContent = 'X'
+            console.log
+        })
+    })
+    return new Array(9).fill(0)
+})()
+
+const player = (name, icon) => {
+    return { name, icon }
+}
+
+const gameplay = (function() {
+    
 })()

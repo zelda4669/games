@@ -1,10 +1,6 @@
 .game {
     display: grid;
     grid-template-rows: repeat(3, 200px);
-}
-
-.row {
-    display: grid;
     grid-template-columns: repeat(3, 200px);
 }
 
@@ -12,5 +8,19 @@
     padding: 40px;
     text-align: center;
     font-size: 100px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+#cell1, #cell4, #cell7 {
+    border-left: 10px;
+    border-right: 10px;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+#cell3, #cell4, #cell5 {
+    border-top: 10px;
+    border-bottom: 10px;
+    border-top-style: solid;
+    border-bottom-style: solid;
 }
