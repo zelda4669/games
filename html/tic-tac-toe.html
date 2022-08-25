@@ -11,8 +11,24 @@
 <body>
     <a href="../index.html">Home</a>
     <h1>Tic Tac Toe</h1>
-    <div class="game" id="ttt">
-        
+    <div class="selectionScreen">
+        <div class="players" id="players">
+            <div class="createPlayer">
+                <h2>Player Name:</h2>
+                <input id="playerOne" type="text" name="playerOne">
+                <h2>Player Icon:</h2>
+                <input id="iconOne" type="text" name="iconOne">
+            </div>
+            <div class="createPlayer">
+                <h2>Player Name:</h2>
+                <input id="playerTwo" type="text" name="playerTwo">
+                <h2>Player Icon:</h2>
+                <input id="iconTwo" type="text" name="iconTwo">
+            </div>
+        </div>
+        <button class="button" type="submit">Let's Play!</button>
     </div>
+    
+    <div class="game" id="ttt"></div>
 </body>
 </html>

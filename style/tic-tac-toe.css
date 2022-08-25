@@ -24,3 +24,22 @@
     border-top-style: solid;
     border-bottom-style: solid;
 }
+
+#ttt {
+    display: none;
+}
+
+.createPlayer {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+
+.players {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}

@@ -5,17 +5,10 @@ const gameboard = (function() {
         const cell = document.createElement('div')
         cell.classList.add('tile')
         cell.setAttribute('id', `cell${i}`)
-        cell.textContent = `${i}`
+        cell.textContent = ''
         board.appendChild(cell)
     }
 
-    const tiles = document.querySelectorAll('.cell')
-    tiles.forEach((tile) => {
-        tile.addEventListener('click', () => {
-            // tile.textContent = 'X'
-            console.log
-        })
-    })
     return new Array(9).fill(0)
 })()
 
@@ -23,6 +16,11 @@ const player = (name, icon) => {
     return { name, icon }
 }
 
-const gameplay = (function() {
-    
+const gameplay = (function(player1, player2) {
+    const tiles = document.querySelectorAll('.tile')
+    tiles.forEach((tile) => {
+        tile.addEventListener('click', () => {
+            tile.textContent = 'X'
+        })
+    })
 })()
